@@ -2,7 +2,7 @@ package com.java;
 import  java.util.LinkedList;
 import java.util.Queue;
 
-public class BinTree {
+public class BinaryTree {
 	class Node{
 		int data;
 		Node right;
@@ -15,7 +15,7 @@ public class BinTree {
 	}
 	
 	public Node root;
-	BinTree(int rootData){
+	BinaryTree(int rootData){
 		root = new Node(rootData);
 	}
 	
@@ -46,13 +46,13 @@ public class BinTree {
 	void inorder(Node temp) {
 		if(temp == null) return;
 		inorder(temp.left);
-		System.out.println(temp.data+", ");
+		System.out.print(temp.data+", ");
 		inorder(temp.right);
 	}
 	
 	void preorder(Node temp) {
 		if(temp == null) return;
-		System.out.println(temp.data+", ");
+		System.out.print(temp.data+", ");
 		preorder(temp.left);
 		preorder(temp.right);
 	}
@@ -61,7 +61,18 @@ public class BinTree {
 		if(temp == null) return;
 		postorder(temp.left);
 		postorder(temp.right);
-		System.out.println(temp.data+", ");	
+		System.out.print(temp.data+", ");	
 	}
 	
+	
+	public static void main(String[] args) {
+		BinaryTree tree = new BinaryTree(5);
+		tree.insert(12);
+		tree.insert(23);
+		tree.insert(21);
+		tree.insert(4);
+		
+		tree.inorder(tree.root);
+		System.out.println(" : is the inorder traversal");
+	}
 }
