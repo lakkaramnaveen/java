@@ -1,8 +1,4 @@
-
 public class Stack {
-	
-	
-
 	class Node{
 		String item;
 		Node next;
